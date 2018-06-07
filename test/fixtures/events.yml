@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  tag: MyText
+  scheduled_date: 2018-06-06
+  complete: false
+
+two:
+  title: MyString
+  tag: MyText
+  scheduled_date: 2018-06-06
+  complete: false
