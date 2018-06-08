@@ -57,3 +57,4 @@ gem 'devise'
 gem "letter_opener", :group => :development
 gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails'
+gem 'omniauth-google-oauth2'
