@@ -1,5 +1,7 @@
 class EventsController < ApplicationController
-before_action :authenticate_user!
+before_action :authenticate_user!, except: [:index,:show,:search]
+
+
 
 	def index
 		@events = Event.all
@@ -7,6 +9,13 @@ before_action :authenticate_user!
 	
 	def show
 		@event= Event.find(params[:id])
+	end
+	def search
+		if params[:term]
+		  @events = Event.search_by_full_info(params[:term])
+		else
+		  @users = Event.all
+		end
 	end
 
 	def new

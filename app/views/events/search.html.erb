@@ -1,0 +1,22 @@
+<h1>Search results for "<%= params[:term] %>" </h1>
+ 	<table>
+ 		<thead>
+ 			
+		 		<td><strong>Title</strong></td>	
+		 		<td><strong>Tag</strong></td>	
+		 		<td><strong>Scheduled date</strong></td>	
+	 		
+ 		</thead>
+ 		<tbody>
+ 			<% @events.each do |event| %>
+ 			<tr>
+ 				<td><%= event.title %></td>
+ 				<td><%= event.tag %></td>
+ 				<td><%= event.scheduled_date %></td>
+ 				<td><%= link_to 'Show', event_path(event) %></td>
+ 				<td><%= link_to 'Edit', edit_event_path(event) %></td>
+ 				<td><%= link_to 'Destroy', event_path(event),data:{method: :delete, confirm: 'Are you sure?'} %></td>
+ 			</tr>	
+ 			<% end %>
+ 		</tbody>
+ 	</table>
