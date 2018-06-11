@@ -13,8 +13,12 @@
  */
 // *= require_tree .
 // *= require_self
-
 // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
 @import "events";
 @import "sticky_footer";
+// Easy-autocomplete;
+@import "easy-autocomplete";
+@import "easy-autocomplete.themes";
+
+

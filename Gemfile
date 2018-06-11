@@ -54,9 +54,11 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
-gem "letter_opener", :group => :development
+gem 'letter_opener', :group => :development
 gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails'
 gem 'omniauth-google-oauth2'
-gem "faker", :group => :development
-gem 'pg_search'
+
+gem 'faker', :group => :development
+gem 'ransack'
+
