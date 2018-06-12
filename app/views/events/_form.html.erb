@@ -22,11 +22,19 @@
   </p>
   <p>
     <%= form.label  'scheduled_date (yyyy-mm-dd)' %><br>
-    <%#= form.text_field :scheduled_date %>
     <%= form.text_field :scheduled_date, class: 'datepicker form-control' %>
-    <!-- , :data => {:provide => "datepicker"} -->
-    <!-- <input type="text" data-provide='datepicker' > -->
+  
   </p>
+  <p>
+    <strong><%= label_tag "Event's status:" %><br></strong>
+    
+      <%= form.radio_button :complete, "false", :checked => true %>
+      <%= form.label :complete, "Uncomplete" %><br>
+      
+      <%= form.radio_button :complete, "true"  %>
+      <%= form.label :complete, "Complete"  %>
+  </p>
+
 
   <p>
     <%= form.submit class: 'btn btn-primary' %>

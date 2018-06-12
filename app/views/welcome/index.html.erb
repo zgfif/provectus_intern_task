@@ -1,5 +1,11 @@
-<h1>Main page</h1>
+<h1>Upcoming events</h1>
 <!-- <p>Find me in app/views/welcome/index.html.erb</p> -->
-
+<% @upcoming_events.each do |event| %>
+	<p>
+		<%= link_to event.title, event_path(event) %>
+		<%= event.tag %>
+		<%= event.scheduled_date %>
+	</p>
+<% end %>
 	
 
