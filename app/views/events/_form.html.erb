@@ -13,19 +13,22 @@
 <%= form_with model: @event, local: true do |form| %>
   <p>
     <%= form.label :title %><br>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, class: 'form-control' %>
   </p>
  
   <p>
     <%= form.label :tag %><br>
-    <%= form.text_field :tag %>
+    <%= form.text_field :tag, class:'form-control' %>
   </p>
   <p>
     <%= form.label  'scheduled_date (yyyy-mm-dd)' %><br>
-    <%= form.text_field :scheduled_date %>
+    <%#= form.text_field :scheduled_date %>
+    <%= form.text_field :scheduled_date, class: 'datepicker form-control' %>
+    <!-- , :data => {:provide => "datepicker"} -->
+    <!-- <input type="text" data-provide='datepicker' > -->
   </p>
 
   <p>
-    <%= form.submit %>
+    <%= form.submit class: 'btn btn-primary' %>
   </p>
 <% end %>

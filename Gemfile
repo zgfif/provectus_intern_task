@@ -62,3 +62,7 @@ gem 'omniauth-google-oauth2'
 gem 'faker', :group => :development
 gem 'ransack'
 
+
+
+
+gem 'bootstrap-datepicker-rails' #datepicker for event's scheduled date

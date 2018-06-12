@@ -1,5 +1,5 @@
 class Event < ApplicationRecord
-	validates :title,:tag, presence: true
+	validates :title,:tag, :scheduled_date, presence: true
 	# ,,:scheduled_date
   #                    length: { minimum: 5 }
 
