@@ -1,22 +1,22 @@
 <h1>Search results for "<%= params[:q] %>" </h1>
- 	<table>
- 		<thead>
- 			
-		 		<td><strong>Title</strong></td>	
-		 		<td><strong>Tag</strong></td>	
-		 		<td><strong>Scheduled date</strong></td>	
-	 		
- 		</thead>
- 		<tbody>
- 			<% @events.each do |event| %>
- 			<tr>
- 				<td><%= event.title %></td>
- 				<td><%= event.tag %></td>
- 				<td><%= event.scheduled_date %></td>
- 				<td><%= link_to 'Show', event_path(event) %></td>
- 				<td><%= link_to 'Edit', edit_event_path(event) %></td>
- 				<td><%= link_to 'Destroy', event_path(event),data:{method: :delete, confirm: 'Are you sure?'} %></td>
- 			</tr>	
- 			<% end %>
- 		</tbody>
- 	</table>
+	<h3>by event's titles</h3>
+	<% @event_titles.each do |event_title| %>
+		<strong><%= link_to event_title.title, event_path(event_title) %></strong>
+		<%= event_title.tag  %>
+		<%= event_title.scheduled_date %>
+		<br>
+	<% end %>
+	<h3>by event's tags</h3>
+	<% @event_tags.each do |event_tag| %>
+		<%= event_tag.title %>
+		<strong><%= link_to event_tag.tag, event_path(event_tag)%></strong>
+		<%= event_tag.scheduled_date %>
+		<br>
+	<% end %>
+	<!-- <h3>by event's scheduled_dates</h3>
+	<%# @event_scheduled_dates.each do |event_scheduled_date| %>
+		<%#= event_scheduled_date.title %>
+		<%#= event_scheduled_date.tag %>
+		<strong><%#= event_scheduled_date.scheduled_date %></strong>
+		<br>
+	<%# end %> -->

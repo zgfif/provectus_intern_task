@@ -9,11 +9,16 @@ document.addEventListener("turbolinks:load", function(){
 		},
 		categories: [
 			{
-				listLocation: "events",
-				header: "<strong>Events</strong>",
+				listLocation: "event_titles",
+				header: "<strong>by Event's titles</strong>",
+			},
+			{
+				listLocation: "event_tags",
+				header: "<strong>by Event's tags</strong>",
 			}
 
 		],
+
 		list: {
 			onChooseEvent: function() {
 				var url = $input.getSelectedItemData().url
