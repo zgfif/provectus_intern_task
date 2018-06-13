@@ -64,6 +64,7 @@ gem 'faker', :group => :development
 gem 'ransack'
 
 
+gem 'simplecov', require: false, group: :test #SimpleCov is a code coverage analysis tool for Ruby.
 
 
 gem 'bootstrap-datepicker-rails' #datepicker for event's scheduled date
