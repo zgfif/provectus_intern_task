@@ -14,4 +14,10 @@ RSpec.describe EventsController, type: :controller do
 			expect(response).to be_success
 		end		
 	end
+	context 'GET #new' do
+		it 'returns a failure response' do
+			get :index
+			expect(response).to be_success
+		end
+	end
 end
