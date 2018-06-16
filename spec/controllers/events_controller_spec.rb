@@ -9,7 +9,8 @@ RSpec.describe EventsController, type: :controller do
 	end
 	context 'GET #show' do
 		it 'returns a success response'	do
-			event = Event.create!(title: 'Grumpy', tag: 'cat', scheduled_date: '2018-06-15' )
+			event = Event.new(title: 'Grumpy', tag: 'cat', scheduled_date: '2018-06-15')
+			event.save
 			get :show, params: {id: event.to_param}
 			expect(response).to be_success
 		end		
