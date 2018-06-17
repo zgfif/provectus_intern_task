@@ -11,6 +11,10 @@
 
 
 <%= form_with model: @event, local: true do |form| %>
+
+    <%= form.hidden_field :user_id, :value => current_user.id %>
+
+
   <p>
     <%= form.label :title %><br>
     <%= form.text_field :title, class: 'form-control' %>
@@ -29,7 +33,7 @@
     <strong><%= label_tag "Event's status:" %><br></strong>
     
       <%= form.radio_button :complete, "false", :checked => true %>
-      <%= form.label :complete, "Uncomplete" %><br>
+      <%= form.label :complete, "Incomplete" %><br>
       
       <%= form.radio_button :complete, "true"  %>
       <%= form.label :complete, "Complete"  %>

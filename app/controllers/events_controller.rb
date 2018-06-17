@@ -49,6 +49,6 @@ class EventsController < ApplicationController
 	end
 	private
 		 def event_params
-		 	params.require(:event).permit(:title,:tag,:scheduled_date,:complete)
+		 	params.require(:event).permit(:user_id, :title,:tag,:scheduled_date,:complete)
 		 end
 end

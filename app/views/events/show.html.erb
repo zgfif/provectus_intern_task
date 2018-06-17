@@ -12,6 +12,15 @@
 	<strong>Scheduled date:</strong>
 	<%= @event.scheduled_date %>
 </p>
+<p>
+	<% if @event.user_id.present? %>
+		<strong>Added by:</strong>
+	<%= @event.user.email %>
+	<% else %>
+		<strong>Unknown user added it</strong>
+	<% end %>
+</p>
+
 
 <%= link_to 'Back', :back %>
 <%= link_to 'Events', events_path %>
