@@ -5,6 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-50.times do 
-	Event.create({title: Faker::Name.first_name, tag: Faker::Cat.name, complete: Faker::Boolean.boolean(0.2), scheduled_date: Faker::Date.between(30.days.ago, Date.today)})
+50.times do
+  Event.create({ title: Faker::Name.first_name, tag: Faker::Cat.name, complete: Faker::Boolean.boolean(0.2), scheduled_date: Faker::Date.between(30.days.ago, Date.today) })
 end

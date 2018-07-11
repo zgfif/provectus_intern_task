@@ -1,2 +1,3 @@
+# nothing
 module WelcomeHelper
 end

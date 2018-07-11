@@ -1,10 +1,15 @@
-<h1>Search results for "<%= params[:q] %>" </h1>
+<h1>Search results for "<%= params[:q]+params[:qdate] %>" </h1>
 	<h3>by event's titles</h3>
-	<% @event_titles.each do |event_title| %>
-		<strong><%= link_to event_title.title, event_path(event_title) %></strong>
-		<%= event_title.tag  %>
-		<%= event_title.scheduled_date %>
-		<br>
+	<% unless @event_titles.empty? %>
+		
+	
+		<% @event_titles.each do |event_title| %>
+			<strong><%= link_to event_title.title, event_path(event_title) %></strong>
+			<%= event_title.tag  %>
+			<%= event_title.scheduled_date %>
+			<br>
+		<% end %>
+
 	<% end %>
 	<h3>by event's tags</h3>
 	<% @event_tags.each do |event_tag| %>
@@ -13,10 +18,15 @@
 		<%= event_tag.scheduled_date %>
 		<br>
 	<% end %>
-	<!-- <h3>by event's scheduled_dates</h3>
-	<%# @event_scheduled_dates.each do |event_scheduled_date| %>
-		<%#= event_scheduled_date.title %>
-		<%#= event_scheduled_date.tag %>
-		<strong><%#= event_scheduled_date.scheduled_date %></strong>
+
+	 <h3>by event's scheduled_dates</h3>
+	<% unless @event_scheduled_dates.empty? %>
+
+	<% @event_scheduled_dates.each do |event_scheduled_date| %>
+		<%= event_scheduled_date.title %>
+		<%= event_scheduled_date.tag %>
+		<strong><%= link_to event_scheduled_date.scheduled_date, event_path(event_scheduled_date) %></strong>
 		<br>
-	<%# end %> -->
+	<% end %>
+
+	<% end %>
